@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: deepakvig
+  password: 
+  pool: 5
+
+development:
+  <<: *default
+  database: Wisemedia_weather_development
+
+
+test:
+  <<: *default
+  database: Wisemedia_weather_test
+
+
+production:
+  <<: *default
+  database: Wisemedia_weather_production
+  username: Wisemedia
+  password: <%= ENV['WISEMEDIA_DATABASE_PASSWORD'] %>
